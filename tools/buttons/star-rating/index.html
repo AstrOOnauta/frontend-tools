@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>EXAMPLE | Star Rating</title>
+  </head>
+  <body>
+    <div class="star-rating">
+      <h2>Rate this product</h2>
+      <div class="stars">
+        <button class="star-btn" data-rating="1">
+          <i class="fa fa-star-o"></i>
+        </button>
+        <button class="star-btn" data-rating="2">
+          <i class="fa fa-star-o"></i>
+        </button>
+        <button class="star-btn" data-rating="3">
+          <i class="fa fa-star-o"></i>
+        </button>
+        <button class="star-btn" data-rating="4">
+          <i class="fa fa-star-o"></i>
+        </button>
+        <button class="star-btn" data-rating="5">
+          <i class="fa fa-star-o"></i>
+        </button>
+      </div>
+      <p class="rating-text">Click on the stars to rate</p>
+    </div>
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const starButtons = document.querySelectorAll('.star-btn');
+      const ratingText = document.querySelector('.rating-text');
+      let currentRating = 0;
+
+      starButtons.forEach((button) => {
+        button.addEventListener('click', function () {
+          const rating = parseInt(this.getAttribute('data-rating'));
+          currentRating = rating;
+
+          starButtons.forEach((btn) => {
+            btn.classList.remove('active');
+            btn.querySelector('i').className = 'fa fa-star-o';
+          });
+
+          for (let i = 0; i < rating; i++) {
+            starButtons[i].classList.add('active');
+            starButtons[i].querySelector('i').className =
+              'fa fa-star';
+          }
+
+          const messages = [
+            'Click on the stars to rate',
+            'Terrible',
+            'Poor',
+            'Fair',
+            'Good',
+            'Excellent',
+          ];
+
+          ratingText.textContent = messages[rating];
+        });
+      });
+    });
+  </script>
+</html>

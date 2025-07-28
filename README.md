@@ -50,6 +50,7 @@
 | :-----------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------: |
 |            [Switch Toggle](tools/buttons/switch/)             |         <img src="tools/buttons/switch/preview.gif" alt="Gif of switch toggle button" width="128" height="128">         |
 | [WhatsApp Float Button](tools/buttons/whatsapp-float-button/) | <img src="tools/buttons/whatsapp-float-button/preview.gif" alt="Gif of WhatsApp float button" width="128" height="128"> |
+|           [Star Rating](tools/buttons/star-rating/)           |           <img src="tools/buttons/star-rating/preview.gif" alt="Gif of Star Rating" width="128" height="128">           |
 
 <br>
 
