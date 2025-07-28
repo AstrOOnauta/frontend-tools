@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>EXAMPLE | SIMPLE MODAL</title>
+  </head>
+  <body>
+    <button id="openModal" class="open-btn">Open Modal</button>
+
+    <div id="modal" class="modal">
+      <div class="modal-overlay" id="modalOverlay"></div>
+      <div class="modal-content">
+        <button class="close-btn" id="closeModal">
+          <i class="fa fa-times"></i>
+        </button>
+        <h2>Simple Modal</h2>
+        <p>
+          This is a simple modal with background overlay and close
+          button.
+        </p>
+        <p>
+          You can click on the overlay or the X button to close the
+          modal.
+        </p>
+        <div class="modal-actions">
+          <button class="btn btn-primary">Confirm</button>
+          <button class="btn btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const modal = document.getElementById('modal');
+      const modalOverlay = document.getElementById('modalOverlay');
+      const openModalBtn = document.getElementById('openModal');
+      const closeModalBtn = document.getElementById('closeModal');
+
+      function openModal() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+
+      openModalBtn.addEventListener('click', openModal);
+      closeModalBtn.addEventListener('click', closeModal);
+      modalOverlay.addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', function (event) {
+        if (
+          event.key === 'Escape' &&
+          modal.classList.contains('active')
+        ) {
+          closeModal();
+        }
+      });
+    </script>
+  </body>
+</html>
