@@ -14,6 +14,7 @@
 - [Custom Loadings/Spinner](#custom-loadingsspinner)
 - [Carousel](#carousel)
 - [Text Animations](#text-animations)
+- [Inputs](#inputs)
 - [Buttons](#buttons)
 - [Navigations](#navigations)
 
@@ -44,6 +45,14 @@
 
 <br>
 
+## Inputs
+
+|                    Name                    |                                                  Preview                                                   |
+| :----------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
+| [Color Picker](tools/inputs/color-picker/) | <img src="tools/inputs/color-picker/preview.gif" alt="Gif of color picker input" width="128" height="128"> |
+
+<br>
+
 ## Buttons
 
 |                             Name                              |                                                         Preview                                                         |
@@ -56,10 +65,10 @@
 
 ## Navigations
 
-|                       Name                       |                                                   Preview                                                    |
-| :----------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
-|  [Menu Drawer](tools/navigations/menu-drawer/)   |   <img src="tools/navigations/menu-drawer/preview.gif" alt="Gif of menu drawer" width="128" height="128">    |
-| [Simple Modal](tools/navigations/simple-modal//) | <img src="tools/navigations/simple-modal//preview.gif" alt="Gif of a simple modal" width="128" height="128"> |
+|                      Name                       |                                                   Preview                                                    |
+| :---------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
+|  [Menu Drawer](tools/navigations/menu-drawer/)  |   <img src="tools/navigations/menu-drawer/preview.gif" alt="Gif of menu drawer" width="128" height="128">    |
+| [Simple Modal](tools/navigations/simple-modal/) | <img src="tools/navigations/simple-modal//preview.gif" alt="Gif of a simple modal" width="128" height="128"> |
 
 </br>
 

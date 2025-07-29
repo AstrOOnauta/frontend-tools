@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>EXAMPLE | COLOR PICKER INPUT</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Color Picker Input</h1>
+
+      <div class="input-container">
+        <input
+          type="text"
+          id="hexInput"
+          class="hex-input"
+          placeholder="#ffffff"
+          maxlength="7"
+        />
+        <div class="color-preview-circle" id="colorPreview">
+          <input
+            type="color"
+            id="colorPicker"
+            class="hidden-color-picker"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const hexInput = document.getElementById('hexInput');
+      const colorPicker = document.getElementById('colorPicker');
+      const colorPreview = document.getElementById('colorPreview');
+
+      function updateColor(color) {
+        colorPreview.style.backgroundColor = color;
+        hexInput.value = color;
+        colorPicker.value = color;
+      }
+
+      function isValidHex(hex) {
+        return /^#[0-9A-F]{6}$/i.test(hex);
+      }
+
+      function normalizeHexValue(value) {
+        return value.startsWith('#') ? value : '#' + value;
+      }
+
+      function handleHexInput(e) {
+        const value = normalizeHexValue(e.target.value);
+        if (isValidHex(value)) {
+          updateColor(value);
+        }
+      }
+
+      function handleHexBlur(e) {
+        const value = normalizeHexValue(e.target.value);
+        updateColor(isValidHex(value) ? value : '#ff6b6b');
+      }
+
+      hexInput.addEventListener('input', handleHexInput);
+      hexInput.addEventListener('blur', handleHexBlur);
+      colorPicker.addEventListener('input', (e) =>
+        updateColor(e.target.value)
+      );
+      colorPreview.addEventListener('click', () =>
+        colorPicker.click()
+      );
+
+      updateColor('#ff6b6b');
+    </script>
+  </body>
+</html>
