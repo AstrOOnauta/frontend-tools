@@ -50,6 +50,7 @@
 |                    Name                    |                                                  Preview                                                   |
 | :----------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
 | [Color Picker](tools/inputs/color-picker/) | <img src="tools/inputs/color-picker/preview.gif" alt="Gif of color picker input" width="128" height="128"> |
+|      [Pin OTP](tools/inputs/pin-otp/)      |      <img src="tools/inputs/pin-otp/preview.gif" alt="Gif of pin OTP input" width="128" height="128">      |
 
 <br>
 

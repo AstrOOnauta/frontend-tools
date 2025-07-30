@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  margin-top: 10rem;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #1e1e1e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.pin-input-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.pin-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.pin-digit {
+  width: 3rem;
+  height: 4rem;
+  background-color: #2d3748;
+  border: 2px solid #4a5568;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #e2e8f0;
+  text-align: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.pin-digit:focus {
+  border-color: #63b3ed;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.pin-digit:hover {
+  border-color: #63b3ed;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.pin-display {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #2d3748;
+  border: 2px solid #4a5568;
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.pin-display span:first-child {
+  color: #a0aec0;
+  margin-right: 0.5rem;
+}
+
+.pin-display span:last-child {
+  color: #63b3ed;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+}

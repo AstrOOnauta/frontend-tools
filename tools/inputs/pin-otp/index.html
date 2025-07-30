@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>EXAMPLE | PIN OTP INPUT</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="pin-input-container">
+        <div class="pin-input" id="pinInput"></div>
+      </div>
+
+      <div class="pin-display">
+        <span>PIN Value: </span>
+        <span id="pinValue">------</span>
+      </div>
+    </div>
+
+    <script>
+      const pinLength = 6; // Change the length of the pin here
+
+      function createPinInput() {
+        const pinInput = document.getElementById('pinInput');
+        pinInput.innerHTML = '';
+
+        for (let i = 0; i < pinLength; i++) {
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.className = 'pin-digit';
+          input.maxLength = 1;
+
+          input.addEventListener('input', function (e) {
+            const value = e.target.value.replace(/\D/g, '');
+            e.target.value = value;
+
+            if (value && e.target.nextElementSibling) {
+              e.target.nextElementSibling.focus();
+            }
+            updatePinDisplay();
+          });
+
+          input.addEventListener('keydown', function (e) {
+            if (
+              e.key === 'Backspace' &&
+              !e.target.value &&
+              e.target.previousElementSibling
+            ) {
+              e.target.previousElementSibling.focus();
+            }
+          });
+
+          input.addEventListener('click', function (e) {
+            e.target.select();
+          });
+
+          input.addEventListener('focus', function (e) {
+            e.target.select();
+          });
+
+          input.addEventListener('paste', function (e) {
+            e.preventDefault();
+            const pastedData = (
+              e.clipboardData || window.clipboardData
+            ).getData('text');
+            const digits = pastedData
+              .replace(/\D/g, '')
+              .split('')
+              .slice(0, pinLength);
+
+            const inputs = document.querySelectorAll('.pin-digit');
+            inputs.forEach((input, index) => {
+              if (digits[index]) {
+                input.value = digits[index];
+              } else {
+                input.value = '';
+              }
+            });
+
+            const nextEmptyIndex = digits.length;
+            if (nextEmptyIndex < pinLength) {
+              inputs[nextEmptyIndex].focus();
+            } else {
+              inputs[pinLength - 1].focus();
+            }
+
+            updatePinDisplay();
+          });
+
+          pinInput.appendChild(input);
+        }
+
+        if (pinInput.firstChild) {
+          pinInput.firstChild.focus();
+        }
+      }
+
+      function getPinValue() {
+        const inputs = document.querySelectorAll('.pin-digit');
+        return Array.from(inputs)
+          .map((input) => input.value)
+          .join('');
+      }
+
+      function updatePinDisplay() {
+        const pinValue = getPinValue();
+        const display = document.getElementById('pinValue');
+        display.textContent = pinValue || '------';
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        createPinInput();
+        updatePinDisplay();
+      });
+    </script>
+  </body>
+</html>
