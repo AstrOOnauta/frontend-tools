@@ -17,6 +17,7 @@
 - [Inputs](#inputs)
 - [Buttons](#buttons)
 - [Navigations](#navigations)
+- [Display Data](#display-data)
 
 <br>
 
@@ -70,6 +71,14 @@
 | :---------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
 |  [Menu Drawer](tools/navigations/menu-drawer/)  |   <img src="tools/navigations/menu-drawer/preview.gif" alt="Gif of menu drawer" width="128" height="128">    |
 | [Simple Modal](tools/navigations/simple-modal/) | <img src="tools/navigations/simple-modal//preview.gif" alt="Gif of a simple modal" width="128" height="128"> |
+
+</br>
+
+## Display Data
+
+|                    Name                    |                                                    Preview                                                    |
+| :----------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
+| [Accordion](tools/display-data/accordion/) | <img src="tools/display-data/accordion/preview.gif" alt="Gif of a native accordion" width="128" height="128"> |
 
 </br>
 
